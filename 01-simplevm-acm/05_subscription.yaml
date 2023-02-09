@@ -1,0 +1,16 @@
+apiVersion: apps.open-cluster-management.io/v1
+kind: Subscription
+metadata:
+  name: rhel9                           
+  namespace: simple-vm
+  labels:
+    app: rhel9
+  annotations:
+    apps.open-cluster-management.io/github-branch: main
+    apps.open-cluster-management.io/github-path: 01-simplevm-assets
+spec:
+  channel:  simple-vm/acm-virt
+  placement: 
+    placementRef: 
+      kind: PlacementRule
+      name: devonly     

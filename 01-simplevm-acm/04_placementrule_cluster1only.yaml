@@ -1,0 +1,11 @@
+apiVersion: apps.open-cluster-management.io/v1
+kind: PlacementRule
+metadata:
+  labels:
+    app: rhel9
+  name: devonly
+  namespace: simple-vm
+spec:
+  clusterSelector:
+    matchLabels:
+      clusterid: cnv1
