@@ -1,3 +1,4 @@
 namespace: windows-build
 resources:
+  - namespace.yaml
   - kubevirt-tekton-tasks-okd.yaml
