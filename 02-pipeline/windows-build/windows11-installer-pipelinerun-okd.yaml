@@ -2,6 +2,8 @@ apiVersion: tekton.dev/v1beta1
 kind: PipelineRun
 metadata:
   generateName: windows11-installer-run-
+  annotations:
+    argocd.argoproj.io/sync-options: Replace=true
 spec:
   params:
     - name: winImageDownloadURL
