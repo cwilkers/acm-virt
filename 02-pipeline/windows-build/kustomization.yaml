@@ -2,5 +2,4 @@ namespace: windows-build
 resources:
   - namespace.yaml
   - kubevirt-tekton-tasks-okd.yaml
-  - windows11-installer-pipelinerun-okd.yaml
-  - windows2k22-installer-pipelinerun-okd.yaml
+  - windows-efi-installer-pipeline.yaml
