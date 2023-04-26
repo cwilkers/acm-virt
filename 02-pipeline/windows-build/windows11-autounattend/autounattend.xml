@@ -1,0 +1,28 @@
+<unattend xmlns="urn:schemas-microsoft-com:unattend">
+    <settings pass="windowsPE">
+        <component name="Microsoft-Windows-International-Core-WinPE" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" language="neutral" versionScope="nonSxS">
+            <SetupUILanguage>
+                <UILanguage>en-US</UILanguage>
+            </SetupUILanguage>
+            <InputLocale>en-US</InputLocale>
+            <SystemLocale>en-US</SystemLocale>
+            <UILanguage>en-US</UILanguage>
+            <UserLocale>en-US</UserLocale>
+        </component>
+    </settings>
+    <settings pass="specialize">
+        <component name="Microsoft-Windows-Shell-Setup" publicKeyToken="31bf3856ad364e35" language="neutral" versionScope="nonSxS">
+            <ComputerName>WIN11-VM</ComputerName>
+            <TimeZone>Central Standard Time</TimeZone>
+        </component>
+        <component name="Microsoft-Windows-Deployment" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" language="neutral" versionScope="nonSxS">
+            <RunSynchronousCommand wcm:action="add">
+                <Order>1</Order>
+                <Path>cmd /c cscript.exe //b c:\windows\system32\slmgr.vbs /ipk <XGVPP-NMH47-7TTHJ-W3FW7-8HV2C/Path>
+                <Description>Enter your Windows 11 product key here.</Description>
+            </RunSynchronousCommand>
+        </component>
+    </settings>
+    <cpi:offlineImage cpi:source="wim:c:/temp/sources/install.wim#Windows 11 Professional" xmlns:cpi="urn:schemas-microsoft-com:cpi" />
+</unattend>
+
