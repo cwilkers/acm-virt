@@ -3,7 +3,6 @@ resources:
   - namespace.yaml
   - kubevirt-tekton-tasks-okd.yaml
   - windows-efi-installer-pipeline.yaml
-  - windows11-installer-pipelinerun-okd.yaml
 
 configMapGenerator:
   - name: windows11-autounattend
