@@ -1,0 +1,6 @@
+namePrefix: dev-
+commonLabels:
+  app: dev
+resources:
+- ../../base
+- pipelines.yaml
