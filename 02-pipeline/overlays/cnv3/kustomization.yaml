@@ -1,5 +1,4 @@
 commonLabels:
-  app: dev
+  app: prod
 resources:
 - ../../base
-- pipelines.yaml

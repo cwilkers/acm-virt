@@ -1,5 +1,4 @@
 commonLabels:
-  app: dev
+  app: test
 resources:
 - ../../base
-- pipelines.yaml
