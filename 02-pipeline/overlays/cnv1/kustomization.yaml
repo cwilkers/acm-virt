@@ -3,3 +3,6 @@ commonLabels:
 resources:
 - ../../base
 - pipelines.yaml
+
+patchesStrategicMerge:
+- hco.yaml
