@@ -1,0 +1,38 @@
+apiVersion: tekton.dev/v1
+kind: PipelineRun
+metadata:
+  annotations:
+    argocd.argoproj.io/sync-wave: "5"
+    argocd.argoproj.io/sync-options: SkipDryRunOnMissingResource=true
+  creationTimestamp:
+  name: windows-efi-installer-90wel6
+  namespace: openshift-cnv
+spec:
+  params:
+  - name: winImageDownloadURL
+    value: http://installhost.example.com/win11.iso
+  - name: autounattendConfigMapName
+    value: windows11-autounattend
+  - name: virtioContainerDiskName
+    value: registry.redhat.io/container-native-virtualization/virtio-win-rhel9@sha256:831e21c2a34a4f651f9c5d3c3b0efda59853a1c060db0744da720786c14c64d6
+  - name: sourceTemplateName
+    value: windows11-desktop-large
+  - name: sourceTemplateNamespace
+    value: openshift
+  - name: installerTemplateName
+    value: windows11-desktop-large-installer
+  - name: allowReplaceInstallerTemplate
+    value: "false"
+  - name: baseDvName
+    value: win11
+  - name: baseDvNamespace
+    value: openshift-virtualization-os-images
+  - name: isoDVName
+    value: win11
+  pipelineRef:
+    name: windows-efi-installer
+  taskRunTemplate:
+    serviceAccountName: pipeline
+  timeouts:
+    pipeline: 1h0m0s
+status: {}
