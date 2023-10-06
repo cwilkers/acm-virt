@@ -5,7 +5,7 @@ metadata:
     argocd.argoproj.io/sync-wave: "5"
     argocd.argoproj.io/sync-options: SkipDryRunOnMissingResource=true
   creationTimestamp:
-  name: windows-efi-installer-90wel6
+  name: windows-efi-installer-gitops
   namespace: openshift-cnv
 spec:
   params:
